@@ -18,6 +18,10 @@ class GridViewExample extends StatelessWidget {
             return Container(
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: NetworkImage(
+                          "https://cdn.britannica.com/w:400,h:300,c:crop/97/158797-050-ABECB32F/North-Cascades-National-Park-Lake-Ann-park.jpg"),
+                      fit: BoxFit.fill),
                   gradient: LinearGradient(
                       colors: [Colors.blue, Colors.green],
                       begin: Alignment.topLeft,
