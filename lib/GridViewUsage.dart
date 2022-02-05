@@ -15,23 +15,43 @@ class GridViewExample extends StatelessWidget {
             crossAxisCount: 4,
           ),
           itemBuilder: (context, index) {
-            return Container(
-              margin: EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: NetworkImage(
-                          "https://cdn.britannica.com/w:400,h:300,c:crop/97/158797-050-ABECB32F/North-Cascades-National-Park-Lake-Ann-park.jpg"),
-                      fit: BoxFit.fill),
-                  gradient: LinearGradient(
-                      colors: [Colors.blue, Colors.green],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      tileMode: TileMode.repeated)),
-              alignment: Alignment.center,
-              child: Text(
-                "Hi Flutter $index",
-                textAlign: TextAlign.center,
+            return GestureDetector(
+              child: Container(
+                margin: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(color: Colors.orange, offset: Offset(10, 5))
+                    ],
+                    border: Border(
+                      top: BorderSide(
+                          color: Colors.orange,
+                          width: 6,
+                          style: BorderStyle.solid),
+                      bottom: BorderSide(
+                          color: Colors.orange,
+                          width: 6,
+                          style: BorderStyle.solid),
+                    ),
+                    image: DecorationImage(
+                        image: NetworkImage(
+                            "https://cdn.britannica.com/w:400,h:300,c:crop/97/158797-050-ABECB32F/North-Cascades-National-Park-Lake-Ann-park.jpg"),
+                        fit: BoxFit.contain,
+                        alignment: Alignment.topCenter),
+                    gradient: LinearGradient(
+                        colors: [Colors.blue, Colors.green],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        tileMode: TileMode.repeated)),
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+                  child: Text(
+                    "Hi Flutter $index",
+                    textAlign: TextAlign.center,
+                  ),
+                ),
               ),
+              onTap: () => debugPrint("Clickled $index"),
             );
           }),
     );
