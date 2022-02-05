@@ -39,7 +39,32 @@ class CollapseToolBarExample extends StatelessWidget {
                   color: RandomColor(),
                   child: Text("Hello $index")),
               childCount: 10),
-          itemExtent: 200)
+          itemExtent: 200),
+      SliverGrid(
+          delegate: SliverChildListDelegate(Containersss),
+          gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3)),
+      SliverGrid(
+          delegate: SliverChildBuilderDelegate(
+              (context, index) => Container(
+                  alignment: Alignment.center,
+                  height: 200,
+                  color: RandomColor(),
+                  child: Text("Hello $index")),
+              childCount: 10),
+          gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4)),
+      SliverGrid(
+        delegate: SliverChildBuilderDelegate(
+            (context, index) => Container(
+                alignment: Alignment.center,
+                height: 200,
+                color: RandomColor(),
+                child: Text("Hello $index")),
+            childCount: 10),
+        gridDelegate:
+            SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 40),
+      )
     ]);
   }
 

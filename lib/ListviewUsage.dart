@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class ListViewUsage extends StatelessWidget {
-  ListViewUsage({Key? key}) : super(key: key);
+   ListViewUsage({Key? key}) : super(key: key);
 
   List<Students> AllStudents = List.generate(
       500, (index) => Students(index + 1, "Student", "Student Surname"));
